@@ -1,0 +1,24 @@
+{% extends "news.html" %}
+{% block title %}atashfeshan{% endblock %}
+{% block expandable_list %}{% endblock %}
+{% block atashfeshan_content %}
+    <div style="background-color: #F2EDEA; width: 580px; height: 100%; justify-content: center;">
+        <h6 style="color: black; text-align: justify; padding: 8px; font-weight: 500; font-size: 13px">
+            در پی فوران بلندترین آتشفشان فعال در اوراسیا، ستون های خاکستر بر فراز شبه جزیره کامچاتکا روسیه به آسمان
+            پرتاب شد. ستون های خاکستر عظیمی از بلندترین آتشفشان فعال اوراسیا فوران کردند و مقامات را مجبور به تعطیلی
+            مدارس در دو شهر در شبه جزیره کم جمعیت روسیه کرد. کلوچفسکایا اسپوکا با ارتفاع حدود ۴۷۵۰ متر، بلندترین آتشفشان
+            فعال در اوراسیا است.
+        </h6>
+    </div>
+{% endblock %}
+{% block slider %}{% endblock %}
+{% block script %}
+    {{ block.super }}
+    <script>
+        let slide = document.getElementById('slide1');
+        slide.style.display = "block";
+        slide.style.margin = "0px";
+        document.getElementById('main').style.height = "470px";
+        document.getElementById('carusel').style.paddingBottom = "0px";
+    </script>
+{% endblock %}

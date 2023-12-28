@@ -1,0 +1,92 @@
+{% extends "news.html" %}
+{% block title %}search{% endblock %}
+{% block expandable_list %}{% endblock %}
+{% block slider_content %}
+
+    <div class="news_content">
+        <div class="search_field">
+            <h5 style="font-size: 13px;color: black;font-weight: normal;padding-left: 8px">
+                جست و جو در میان آخرین اخبار...
+            </h5>
+            <input class="inputText" id="autocomplete" style="color: black;" type="search" size="34px"/>
+        </div>
+        <ul class="news">
+            <li class="news_field">
+                دونالد ترامپ بزرگ ترین خطر برای جهان در سال ۲۰۲۴ خواهد بود.
+            </li>
+            <li class="news_field">
+                واکنش باهنر به در صلاحیت پزشکیان، خردمندانه برخورد نکردند.
+            </li>
+            <li class="news_field">
+                انتقاد ابوترابی فرد،امام جمعه موقت تهران از رد صلاحیت ها
+            </li>
+            <li class="news_field">
+                حماس از بیمارستان الشفا به عنوان مرکز فرماندهی استفاده می کند.
+            </li>
+            <li class="news_field">
+                قیمت مسکن در ارزانترین منطقه تهران
+            </li>
+            <li class="news_field">
+                قیمت جدید خودرو های وارداتی
+            </li>
+            <li class="news_field">
+                جنجالی که یک عکس به پا کرد، ماجرای اگزوز خودروی برقی ایرانی
+            </li>
+            <li class="news_field">
+                فرمول محاسبه سنوات و عیدی ۱۴۰۲
+            </li>
+            <li class="news_field">
+                ترکیب ایران مقابل کالدونیا مشخص شد.
+            </li>
+            <li class="news_field">
+                شوک بزرگ به نکونام پیش از دربی پایتخت
+            </li>
+            <li class="news_field">
+                بزرگ ترین غایب پرسپولیس در دیدار با النصر
+            </li>
+            <li class="news_field">
+                رونالدو صد و بیست و هشتمین گلش را زد.
+            </li>
+            <li class="news_field">
+                کشف یک موزاییک باستانی با طرحی شگفت انگیز در ترکیه
+            </li>
+            <li class="news_field">
+                افتتاح بزرگترین نیروگاه برق خورشیدی جهان در امارات
+            </li>
+            <li class="news_field">
+                آلودگی هوای تهران یک شنبه شدیدتر می شود.
+            </li>
+            <li class="news_field">
+                ابن سینا برای امروز ما چه حرفی برای گفتن دارد؟
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+{% block script %}
+    {{ block.super }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let input = document.getElementById('autocomplete');
+            input.addEventListener('keyup', function () {
+                let val = input.value.trim();
+                let select = document.querySelector('.news');
+                let newsItems = select.querySelectorAll('li');
+
+                if (val !== '') {
+                    newsItems.forEach(function (item) {
+                        if (item.textContent.indexOf(val) === -1) {
+                            item.style.display = "none"
+                        } else {
+                            item.style.display = "list-item"
+                        }
+                    });
+                } else {
+                    newsItems.forEach(function (item) {
+                        item.style.display = "list-item"
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

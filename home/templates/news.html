@@ -1,0 +1,545 @@
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}اخبار روز{% endblock %}</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="shortcut icon" href="../static/images/favicon.jpg" type="image/x-icon"/>
+</head>
+
+<body>
+<div>
+    <img src="../static/images/ads.gif" alt="ads" style="max-width: 100%; padding-bottom: 4px;">
+</div>
+<div class="navbr">
+    <div class="nav">
+        <ul class="navigationBar">
+            <li class="item">
+                <a href="#">خانه</a>
+            </li>
+            <li class="subnav"><a href="#">اخبار</a>
+                <ul class="subnav-content">
+                    <li><a class="linktag" href="#">سیاسی</a></li>
+                    <li><a class="linktag" href="#">اجتماعی</a></li>
+                    <li><a href="#">ورزشی</a>
+                        <ul class="secondsubnav">
+                            <li><a class="linktag2" href="#">فوتبال</a></li>
+                            <li><a class="linktag2" href="#">والیبال</a></li>
+                            <li><a class="linktag2" href="#">بسکتبال</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="linktag" href="#">اقتصادی</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="#">آرشیو</a>
+            </li>
+            <li class="item">
+                <a href="#"> درباره ما</a>
+            </li>
+
+            <li class="item">
+                <a href="#">تماس با ما</a>
+            </li>
+            <li class="item">
+                <a onclick="showform()" href="#">ورود به باشگاه خبرنگاران</a>
+            </li>
+        </ul>
+    </div>
+    <div class="srch">
+        <button class="btn" onclick="location.href='{% url 'search' %}'">
+        </button>
+    </div>
+</div>
+
+<div class="holdparent">
+    <div class="parent">
+        <div class="main" id="main">
+            <div class="holder">
+                <hr class="headhr">
+                <ul class="headers">
+                    <li>
+                        <a class="header" id="spechead" onclick="currentlist('speclist')" href="#">نگاه ویژه</a>
+                    </li>
+                    <hr id="spechr" class="hr">
+                    <li>
+                        <a class="header" id="visitedhead" onclick="currentlist('visitedlist')"
+                           href="#">پربازدید</a>
+                    </li>
+                    <hr id="visitedhr" class="hr">
+                    <li>
+                        <a class="header" id="attractionhead" onclick="currentlist('attractionslist')"
+                           href="#">دیدنی
+                            ها</a>
+                    </li>
+                </ul>
+                <div class="scroll_list1" id="speclist">
+                    <div class="list_item1" style="align-items: center;">
+                        <div class="img2_list">
+                            <a href="#"><img class="img_2" src="../static/images/gid.jpg" alt="gid"></a>
+                        </div>
+                        <div style="padding-right: 8px;">
+                            <a class="atag" href="#">آمریکا، ایران و خطر یک جنگ گسترده تر در خاورمیانه ؟ <br>گیدئون
+                                راچمن</a>
+                        </div>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <div class="img2_list">
+                            <a href="#"><img class="img_2" src="../static/images/pol.jfif" alt="pol"></a>
+                        </div>
+                        <div style="padding-right: 8px;">
+                            <a class="atag" href="#">به این دلایل جنگ زمینی اسرائیل در غزه خوب پیش نخواهد رفت <br>پل
+                                راجرز</a>
+                        </div>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <div class="img2_list">
+                            <a href="#"><img class="img_2" src="../static/images/arash.jpg" alt="malake"></a>
+                        </div>
+                        <div style="padding-right: 8px;">
+                            <a class="atag" href="#">ترس واضطراب می تواند کمک کند؛ چگونه از آن به نفع خود استفاده
+                                کنیم؟
+                                <br>آرش
+                                جوانبخت</a>
+                        </div>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <div class="img2_list">
+                            <a href="#"><img class="img_2" src="../static/images/hamid.jpg" alt="malake"></a>
+                        </div>
+                        <div style="padding-right: 8px;">
+                            <a class="atag" href="#">چگونه غرب در تلاش برای &laquo;اختراع مجدد اسرائیل&raquo;
+                                است؟<br>حمید
+                                دباشی</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll_list1" id="visitedlist">
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            سپهر حیدری یک سال محروم شد.
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            توضیح رئیس دانشگاه تهران درباره درگیری با دانشجویان
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            وام مسکن ایثارگران ۶۰۰ میلیون تومان شد
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            اختراع شگفت انگیز دانشمندان ایرانی در آمریکا
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            آمریکا در تله انفجاری غزه چه خواهد کرد؟
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            پشت پرده وام ۳۰۰ میلیونی بانک ملی
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            رتبه آخر پرسپولیس در آسیا، کمترین فرصت گل
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            این پرسپولیسی مرد اول سینمای ایران شد
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            گران ترین ساعت دنیا به رونالدو رسید
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            طوفان برفی قدرتمند
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            جنگ خندق در قرن ۲۱
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            پیش بینی قیمت بیت کوین
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            خداحافظی حسن یزدانی از کشتی
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            ایران باید با طالبان چه کند؟
+                        </a>
+                    </div>
+                    <div class="list_item1" style="align-items: center;">
+                        <a class="atag" href="#">
+                            چرا رشد اقتصادی چین منافع آمریکا را تهدید خواهد کرد؟
+                        </a>
+                    </div>
+                </div>
+                <div class="scroll_list1" id="attractionslist">
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            <img class="img_1" src="../static/images/malake.jpeg" alt="malake">
+                            (ویدئو) ملکه انگلیس به یک بچه فیل شیر داد
+                        </a>
+                    </div>
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            <img class="img_1" src="../static/images/1786281_991.jpg" alt="police">
+                            (ویدئو) تعقیب و گریز پلیس با هامر سرقتی؛ تلاش برای سرقت دو خودروی دیگر!
+                        </a>
+                    </div>
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            <img class="img_1" src="../static/images/akasi.jpg" alt="akasi">
+                            (تصاویر) برندگان مسابقه عکاسی از سگ ها در سال ۲۰۲۳
+                        </a>
+                    </div>
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            <img class="img_1" src="../static/images/israel.jpg" alt="israel">
+                            (تصاویر) اسرائیل اردوگاه جبالیا را روی سر صد ها فلسطینی خراب کرد.
+                        </a>
+                    </div>
+                    <div class="list_item1">
+                        <a class="atag" href="#">
+                            <img class="img_1" src="../static/images/koshti.jpg" alt="koshti">
+                            (ویدئو) مدرسه کشتی دختران؛ تابوشکنی دختران
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% block slider_content %}
+                <div class="carusel" id="carusel">
+                    <div class="caruselSlider">
+                        <div class="Slides" id="slide1">
+                            <div class="slide">
+                                <div>
+                                    <a href="#">
+                                        <h1 style="font-size: 26px;" class="text">فوران بلندترین آتشفشان فعال در اوراسیا
+                                        </h1>
+                                    </a>
+                                    <a href="#">
+                                        <h5 class="text">ستون های خاکستر بر فراز شبه جزیره کامچانکا روسیه به آسمان پرتاب
+                                            شد
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div class="carusel_images">
+                                    <a href="{% url 'atashfeshan' %}"> <img onmouseover="stopshow()"
+                                                                            onmouseout="runshow()"
+                                                                            class="img"
+                                                                            src="../static/images/favaran.jpg"
+                                                                            alt="favaran"></a>
+                                </div>
+                                {% block atashfeshan_content %}{% endblock %}
+                            </div>
+                        </div>
+                        <div class="Slides" id="slide2">
+                            <div class="slide">
+                                <div>
+                                    <a href="#">
+                                        <h1 style="font-size: 26px;" class="text">جزییات آتش سوزی مرگبار در کمپ ترک
+                                            اعتیاد
+                                            لنگرود
+                                        </h1>
+                                    </a>
+                                    <a href="#">
+                                        <h5 class="text">این خبر تکمیل می شود...</h5>
+                                    </a>
+                                </div>
+                                <div class="carusel_images">
+                                    <a href="#"> <img onmouseover="stopshow()" onmouseout="runshow()" class="img"
+                                                      src="../static/images/kamp.jpg" alt="kamp"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Slides" id="slide3">
+                            <div class="slide">
+                                <div>
+                                    <a href="#">
+                                        <h1 style="font-size: 26px;" class="text">اعلام حکم AFC: نتیجه سپاهان - الاتحاد
+                                            ۰-۳
+                                            شد
+                                        </h1>
+                                    </a>
+                                    <a href="#">
+                                        <h5 class="text">علاوه بر نتیجه، سپاهان ۲۰۰ هزار دلار جریمه و ۳ بازی خارج از نقش
+                                            جهان
+                                            باید
+                                            بازی کند.</h5>
+                                    </a>
+                                </div>
+                                <div class="carusel_images">
+                                    <a href="#"> <img onmouseover="stopshow()" onmouseout="runshow()" class="img"
+                                                      src="../static/images/sepahan.jpg" alt="sepahan"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+
+            <form class="form" id="form" action="">
+                <div class="top_content">
+                    <a style="color: black;" href="#">ورود به سایت</a>
+                    <a style="color: #7d3e25;text-decoration: underline;" href="news.html">صفحه اصلی</a>
+                </div>
+                <div class="body_content">
+                    <input class="inputtype" type="email" placeholder="ایمیل یا شماره موبایل">
+                    <input class="inputtype" type="password" placeholder="کلمه عبور">
+                    <input class="submit" type="submit" value="ورود">
+                </div>
+
+            </form>
+
+        </div>
+        {% block expandable_list %}
+            <div class="expandablelist">
+                <div class="newsItem" id="newsItem1">
+                    <h6 class="newsItemText">آخرین اخبار سیاسی</h6>
+                    <button id="expandable" class="expandable"
+                            onclick="expand('explist1','newsItemImg1','newsItem1','expandable')">
+                        <img class="newsItemImg" id="newsItemImg1" src="../static/images/plus.svg" alt="plus">
+                    </button>
+                </div>
+                <ul class="expandableUlist" id="explist1">
+                    <li class="expandableItem">
+                        دونالد ترامپ بزرگ ترین خطر برای جهان در سال ۲۰۲۴ خواهد بود.
+                    </li>
+                    <li class="expandableItem">
+                        واکنش باهنر به در صلاحیت پزشکیان، خردمندانه برخورد نکردند.
+                    </li>
+                    <li class="expandableItem">
+                        انتقاد ابوترابی فرد،امام جمعه موقت تهران از رد صلاحیت ها
+                    </li>
+                    <li class="expandableItem">
+                        حماس از بیمارستان الشفا به عنوان مرکز فرماندهی استفاده می کند.
+                    </li>
+                </ul>
+                <div class="newsItem" id="newsItem2">
+                    <h6 class="newsItemText">آخرین اخبار اقتصادی</h6>
+                    <button id="expandable2" class="expandable"
+                            onclick="expand('explist2','newsItemImg2','newsItem2','expandable2')">
+                        <img class="newsItemImg" id="newsItemImg2" src="../static/images/plus.svg" alt="plus">
+                    </button>
+                </div>
+                <ul class="expandableUlist" id="explist2">
+                    <li class="expandableItem">
+                        قیمت مسکن در ارزانترین منطقه تهران
+                    </li>
+                    <li class="expandableItem">
+                        قیمت جدید خودرو های وارداتی
+                    </li>
+                    <li class="expandableItem">
+                        جنجالی که یک عکس به پا کرد، ماجرای اگزوز خودروی برقی ایرانی
+                    </li>
+                    <li class="expandableItem">
+                        فرمول محاسبه سنوات و عیدی ۱۴۰۲
+                    </li>
+                </ul>
+                <div class="newsItem" id="newsItem3">
+                    <h6 class="newsItemText">آخرین اخبار ورزشی</h6>
+                    <button id="expandable3" class="expandable"
+                            onclick="expand('explist3','newsItemImg3','newsItem3','expandable3')">
+                        <img class="newsItemImg" id="newsItemImg3" src="../static/images/plus.svg" alt="plus">
+                    </button>
+                </div>
+                <ul class="expandableUlist" id="explist3">
+                    <li class="expandableItem">
+                        ترکیب ایران مقابل کالدونیا مشخص شد.
+                    </li>
+                    <li class="expandableItem">
+                        شوک بزرگ به نکونام پیش از دربی پایتخت
+                    </li>
+                    <li class="expandableItem">
+                        بزرگ ترین غایب پرسپولیس در دیدار با النصر
+                    </li>
+                    <li class="expandableItem">
+                        رونالدو صد و بیست و هشتمین گلش را زد.
+                    </li>
+                </ul>
+                <div class="newsItem" id="newsItem4">
+                    <h6 class="newsItemText">آخرین اخبار فرهنگی</h6>
+                    <button id="expandable4" class="expandable"
+                            onclick="expand('explist4','newsItemImg4','newsItem4','expandable4')">
+                        <img class="newsItemImg" id="newsItemImg4" src="../static/images/plus.svg" alt="plus">
+                    </button>
+                </div>
+                <ul class="expandableUlist" id="explist4">
+                    <li class="expandableItem">
+                        کشف یک موزاییک باستانی با طرحی شگفت انگیز در ترکیه
+                    </li>
+                    <li class="expandableItem">
+                        افتتاح بزرگترین نیروگاه برق خورشیدی جهان در امارات
+                    </li>
+                    <li class="expandableItem">
+                        آلودگی هوای تهران یک شنبه شدیدتر می شود.
+                    </li>
+                    <li class="expandableItem">
+                        ابن سینا برای امروز ما چه حرفی برای گفتن دارد؟
+                    </li>
+                </ul>
+            </div>
+        {% endblock %}
+    </div>
+</div>
+
+{% block script %}
+    <script>
+        {% block slider %}
+            let i = 0;
+            let timer;
+            let slides = [];
+
+            slides[0] = document.getElementById('slide1');
+            slides[1] = document.getElementById('slide2');
+            slides[2] = document.getElementById('slide3');
+
+            function changeSlide() {
+                switch (i) {
+                    case 0:
+                        slides[0].style.display = "block";
+                        slides[1].style.display = "none";
+                        slides[2].style.display = "none";
+                        break;
+
+                    case 1:
+                        slides[0].style.display = "none";
+                        slides[1].style.display = "block";
+                        slides[2].style.display = "none";
+                        break;
+
+                    default:
+                        slides[0].style.display = "none";
+                        slides[1].style.display = "none";
+                        slides[2].style.display = "block";
+                }
+
+                if (i < slides.length - 1) {
+                    i++;
+                } else {
+                    i = 0;
+                }
+                timer = setTimeout(changeSlide, 3000);
+            }
+
+
+            function stopshow() {
+                clearTimeout(timer);
+            }
+
+            function runshow() {
+                changeSlide();
+            }
+
+            window.onload = runshow();
+
+        {% endblock %}
+        function showform() {
+            let form = document.getElementById('form');
+            form.style.display = "block";
+        }
+
+        function currentlist(id) {
+            let speclist = document.getElementById('speclist');
+            let visitedlist = document.getElementById('visitedlist');
+            let attractionslist = document.getElementById('attractionslist');
+
+            switch (id) {
+                case "speclist":
+                    speclist.style.display = "block";
+                    visitedlist.style.display = "none";
+                    attractionslist.style.display = "none";
+                    setActiveColor('spechead');
+                    setActiveBorderColor('spechr');
+                    setPassiveBorderColor('visitedhr');
+                    setPassiveColor('visitedhead');
+                    setPassiveColor('attractionhead');
+                    break;
+                case "visitedlist":
+                    speclist.style.display = "none";
+                    visitedlist.style.display = "block";
+                    attractionslist.style.display = "none";
+                    setPassiveColor('spechead');
+                    setActiveColor('visitedhead');
+                    setActiveBorderColor('visitedhr');
+                    setPassiveBorderColor('spechr');
+                    setPassiveColor('attractionhead');
+                    break;
+                default:
+                    speclist.style.display = "none";
+                    visitedlist.style.display = "none";
+                    attractionslist.style.display = "block";
+                    setPassiveColor('spechead');
+                    setPassiveColor('visitedhead');
+                    setActiveColor('attractionhead');
+                    setPassiveBorderColor('spechr');
+                    setPassiveBorderColor('visitedhr');
+            }
+        }
+
+        function setActiveColor(id) {
+            let element = document.getElementById(id);
+            element.style.color = "#975641";
+        }
+
+        function setPassiveColor(id) {
+            let element = document.getElementById(id);
+            element.style.color = "grey";
+        }
+
+        function setActiveBorderColor(id) {
+            let element = document.getElementById(id);
+            element.style.border = ".5px solid #975641";
+        }
+
+        function setPassiveBorderColor(id) {
+            let element = document.getElementById(id);
+            element.style.border = ".5px solid grey";
+        }
+
+        function expand(listId, imgId, itemId, btnId) {
+            let list = document.getElementById(listId);
+            let img = document.getElementById(imgId);
+            let item = document.getElementById(itemId);
+            let btn = document.getElementById(btnId);
+
+            if (list.style.maxHeight) {
+                list.style.maxHeight = null;
+                list.style.marginBottom = null;
+                img.src = "../static/images/plus.svg";
+                item.style.backgroundColor = "#B93E2E";
+                btn.style.backgroundColor = "#B93E2E";
+            } else {
+                list.style.maxHeight = list.scrollHeight + "px";
+                list.style.marginBottom = "32px";
+                img.src = "../static/images/minus.svg";
+                item.style.backgroundColor = "#d87669";
+                btn.style.backgroundColor = "#d87669";
+            }
+        }
+
+    </script>
+{% endblock %}
+
+</body>
+
+</html>
